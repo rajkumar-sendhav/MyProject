@@ -1,4 +1,5 @@
-// React Navigation v6 - Passing Data Between Screen
+/* eslint-disable react/no-unstable-nested-components */
+// React Navigation v6 - Drawer Navigation - Side Menu
 // https://reactnavigation.org/docs/drawer-navigator
 
 import React from 'react';

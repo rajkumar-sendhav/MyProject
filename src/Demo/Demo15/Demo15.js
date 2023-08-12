@@ -5,7 +5,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import ScreenA from './src/Demo/Demo15/ScreenA';
+import ScreenA from './src/Demo/Demo16/ScreenA';
 import ScreenB from './src/Demo/Demo13/ScreenB';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 

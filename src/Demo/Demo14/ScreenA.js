@@ -1,3 +1,22 @@
+// Custom Fonts in React Native CLI
+// https://fonts.google.com/
+// STEP 1:
+// Create a config file at the root of the project named "react-native.config.js"
+
+// STEP 2:
+// Add the following code inside.
+//   module.exports = {
+//     project: {
+//       ios:{},
+//       android:{}
+//     },
+//     assets:['./assets/fonts/'],
+//   }
+// STEP 3:
+// Run the following command:
+// npx react-native link       (React-native version < 0.69)
+// npx react-native-asset      (React-native version > 0.69)
+
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import React from 'react';
 
@@ -27,8 +46,10 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 40,
-    fontWeight: 'bold',
     margin: 10,
+    fontFamily: 'DancingScript-Regular',
+    // fontFamily: 'Pacifico-Regular',
+    // fontFamily: 'Rajdhani-Regular',
   },
 });
 

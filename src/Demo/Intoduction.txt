@@ -68,3 +68,20 @@ For UI, React Native gives you special components which are then compiled to nat
 Well, in general, it can be said that your code in React Native is divided into two parts: 
 "UI & Logic"
 the components that make up the UI and the JavaScript code that make up the logic. When React Native code is compiled into native app, the components that make up the UI become native widgets, but the JavaScript code remains the same. your JavaScript code runs in a special virtual machine in the end, that hosted by React Native inside of your app, this JavaScript virtual machine, known how to talk to the native platform features, so your app is running on the operating system through a special bridge and that virtual machine, that's all automatically provided by React Native.  
+
+List: 
+1.  Structure & Basic Components in our First App
+2.  Using the state Hook
+3.  Styles & Style Sheet
+4.  Responsive UI with Flexbox
+5.  List, ScrollView & RefreshControl
+6.  FlatList & SectionList with Nested Array
+7.  Text Input & Keyboard, Button, Touchable & Pressable
+8.  Alert & Toast Message
+9.  Modal & How to create Custom Alert with it
+10. Image & ImageBackground
+11. Custom Components & Props (CustomButton)
+12. React Navigation v6 - Stack Navigator
+13. React Navigation v6 - Tab Navigator, Material Tab at Bottom & Top
+14. React Navigation v6 - Drawer Navigation - Side Menu & Custom Fonts in React Native CLI
+15. 3.10.09 Global style & How to use custom fonts in our project.

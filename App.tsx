@@ -1,11 +1,11 @@
-// AsyncStorage - How to Make an offline Login with Async Storage
-// Async Storage: Unencrypted, Asynchronous, Persistent, key-value Storage System that is Global to the app. It should be used instead of Local Storage. Because AsyncStorage is Unencrypted, don't use it to store secret items such as passwords and tokens. One of the advantage of using AsyncStorage is that you can use it offline storage on the user's device, and when the user closes or restarts the app, this storage will not be erased and you can still use its values.
+// Global Style & How to use Custom Fonts Globally in Project
+/* eslint-disable react/no-unstable-nested-components */
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import ScreenA from './src/Demo/Demo15/ScreenA';
-import ScreenB from './src/Demo/Demo13/ScreenB';
+import ScreenA from './src/screens/ScreenA';
+import ScreenB from './src/screens/ScreenB';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const Drawer = createDrawerNavigator();

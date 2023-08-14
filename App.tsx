@@ -1,6 +1,9 @@
-// AsyncStorage - How to Make an offline Login with Async Storage
-// Async Storage: Unencrypted, Asynchronous, Persistent, key-value Storage System that is Global to the app. It should be used instead of Local Storage. Because AsyncStorage is Unencrypted, don't use it to store secret items such as passwords and tokens. One of the advantage of using AsyncStorage is that you can use it offline storage on the user's device, and when the user closes or restarts the app, this storage will not be erased and you can still use its values.
-// npm install @react-native-async-storage/async-storage
+// SQLite Database - How to Make an offline Login with SQLite
+// https://sqlite.org/index.html
+// What Is SQLite?
+// SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. SQLite is the most used database engine in the world. SQLite is built into all mobile phones and most computers and comes bundled inside countless other applications that people use every day.
+// https://sqlitebrowser.org/
+// https://github.com/andpor/react-native-sqlite-storage
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';

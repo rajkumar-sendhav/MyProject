@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unstable-nested-components */
-// React Navigation v6 - Drawer Navigation - Side Menu & Custom Fonts in React Native CLI
+// React Navigation v6 - Drawer Navigation - Side Menu
+// https://reactnavigation.org/docs/drawer-navigator
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';

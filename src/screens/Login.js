@@ -61,7 +61,7 @@ export default function Login({navigation}) {
   };
 
   const setData = async () => {
-    if (name.length === 0 || age.length === 0) {
+    if (name.length == 0 || age.length == 0) {
       Alert.alert('Warning!', 'Please write your data.');
     } else {
       try {
@@ -90,7 +90,10 @@ export default function Login({navigation}) {
 
   return (
     <View style={styles.body}>
-      <Image style={styles.logo} source={require('../assets/redux.png')} />
+      {/* <Image
+                style={styles.logo}
+                source={require('../../assets/redux.png')}
+            /> */}
       <Text style={styles.text}>Redux</Text>
       <TextInput
         style={styles.input}

@@ -1,62 +1,54 @@
-// AsyncStorage - How to Make an offline Login with Async Storage
-// Async Storage: Unencrypted, Asynchronous, Persistent, key-value Storage System that is Global to the app. It should be used instead of Local Storage. Because AsyncStorage is Unencrypted, don't use it to store secret items such as passwords and tokens. One of the advantage of using AsyncStorage is that you can use it offline storage on the user's device, and when the user closes or restarts the app, this storage will not be erased and you can still use its values.
+// Redux - State Management.
+// Redux is a predictable state container for JavaScript apps.
+// As the applicaton grows, it beacomes difficult to keep it organized and maintain data flow.
+// Redux Solves this problem by managing applicatin's atate with a single global object called Store.
+// Redux fundamental principles help in maintaining consistency throughout your application, which makes debugging and testing easier.
+// The Redux architecture is based on the following components:
+// Actions: Actions are a plain JavaScript object that contains information. Actions are the only source of information for the state and have a type field that tells what kind of action to perform.
+// Reducers: Actions only tell what  to do, but they don't tell how to do, so reducers are the pure functions that take the current state and action and return the new state and tell the store how to do.
+// Store: The store is the object which holds the state of the application.
+// npm install redux
+// npm install react-redux
+// npm install redux-thunk (module as a middleware for Redox).
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import ScreenA from './src/Demo/Demo14/ScreenA';
-import ScreenB from './src/Demo/Demo13/ScreenB';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Login from './src/screens/Login';
+import Home from './src/screens/Home';
+import {Provider} from 'react-redux';
+import {Store} from './src/redux/store';
 
-const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Drawer.Navigator
-        initialRouteName="ScreenA"
-        screenOptions={{
-          headerShown: true,
-          swipeEnabled: true,
-          headerTitleAlign: 'center',
-          headerStyle: {
-            backgroundColor: '#0080ff',
-          },
-          headerTintColor: '#ffffff',
-          headerTitleStyle: {
-            fontSize: 25,
-            fontWeight: 'bold',
-          },
-        }}>
-        <Drawer.Screen
-          name="Home"
-          component={ScreenA}
-          options={{
-            drawerIcon: ({focused}) => (
-              <FontAwesome5
-                name="autoprefixer"
-                size={focused ? 25 : 20}
-                color={focused ? '#007AFF' : '#999999'}
-              />
-            ),
-          }}
-        />
-        <Drawer.Screen
-          name="Profile"
-          component={ScreenB}
-          options={{
-            title: 'ScreenB Title',
-            drawerIcon: ({focused}) => (
-              <FontAwesome5
-                name="btc"
-                size={focused ? 25 : 20}
-                color={focused ? '#007AFF' : '#999999'}
-              />
-            ),
-          }}
-        />
-      </Drawer.Navigator>
-    </NavigationContainer>
+    <Provider store={Store}>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="Login"
+          screenOptions={{
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: '#0080ff',
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+              fontSize: 25,
+              fontWeight: 'bold',
+            },
+          }}>
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen name="Home" component={Home} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 

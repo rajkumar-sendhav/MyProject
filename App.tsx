@@ -1,5 +1,5 @@
-// How to Fetch Data from an API Using Redux.
-// https://mocki.io/fake-json-api
+// Local & Scheduled Push Notification.
+// https://github.com/zo0r/react-native-push-notification
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';

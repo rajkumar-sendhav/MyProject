@@ -1,4 +1,4 @@
-// Local & Scheduled Push Notification.
+// Push Notification with Firebase - Remote Notification.
 // https://github.com/zo0r/react-native-push-notification
 
 import React from 'react';

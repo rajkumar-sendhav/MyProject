@@ -1,9 +1,7 @@
-// Google Maps.
-// https://github.com/react-native-maps/react-native-maps
-// https://github.com/react-native-maps/react-native-maps/blob/master/docs/installation.md
-// https://developers.google.com/maps/documentation/android-sdk/get-api-key
-// https://console.cloud.google.com/apis/credentials?project=powerful-host-396409
-// https://console.cloud.google.com/apis/library/maps-android-backend.googleapis.com?project=powerful-host-396409
+// RN Camera with Hooks.
+// https://react-native-camera.github.io/react-native-camera/docs/installation
+// https://github.com/reime005/react-native-camera-hooks
+// https://github.com/itinance/react-native-fs
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
@@ -11,6 +9,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from './src/screens/Login';
 import Home from './src/screens/Home';
 import Map from './src/screens/Map';
+import Camera from './src/screens/Camera';
 import {Provider} from 'react-redux';
 import {Store} from './src/redux/store';
 
@@ -42,6 +41,7 @@ const App = () => {
           />
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Map" component={Map} />
+          <Stack.Screen name="Camera" component={Camera} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

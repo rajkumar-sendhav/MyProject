@@ -1,5 +1,6 @@
 // Demo 15
 // Global Style & How to use Custom Fonts Globally in Project
+// npx react-native-asset
 /* eslint-disable react/no-unstable-nested-components */
 
 import React from 'react';

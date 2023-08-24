@@ -1,31 +1,67 @@
-// Testing with Jest and React Test Renderer.
-// Wee are humans, and humans make mistakes Testing is important because it helps you uncover these mistakes and verifies that your code is working.
-// Perhaps even more importantly, testing ensures that your code continues to work in the future as you add new features, refactor the existing ones, or upgrade major dependencies nof your project.
-// There is more value in testing then you might realize.
-// One of the best ways to fix a bug in your code is to write a falling test that exposes. Then when you fix the bug and re-run the test, if it passes it mens the bug is fixed, never reintroduced into the code base.
-// Test can also serve as documentation for new people joining your team. For people who have never seen a codebase before reading tests can help them understand how the exiting code works.
-// In this session, we want to do some testing using Jest.
-// https://jestjs.io/docs/getting-started
-// https://jestjs.io/docs/tutorial-react-native
-
+// To-Do List App.
+// https://github.com/react-native-checkbox/react-native-checkbox
+/* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Login from './src/screens/Login';
-import Home from './src/screens/Home';
-import Map from './src/screens/Map';
-import Camera from './src/screens/Camera';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import ToDo from './src/screens/ToDo';
+import Done from './src/screens/Done';
+import Task from './src/screens/Task';
+import Splash from './src/screens/Splash';
 import {Provider} from 'react-redux';
 import {Store} from './src/redux/store';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
-const App = () => {
+function HomeTabs() {
+  return (
+    <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarIcon: ({focused, size, color}) => {
+          let iconName;
+          if (route.name === 'To-Do') {
+            iconName = 'clipboard-list';
+            size = focused ? 25 : 20;
+          } else if (route.name === 'Done') {
+            iconName = 'clipboard-check';
+            size = focused ? 25 : 20;
+          }
+          return <FontAwesome5 name={iconName} size={size} color={color} />;
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: '#0080ff',
+        inactiveTintColor: '#777777',
+        labelStyle: {fontSize: 15, fontWeight: 'bold'},
+      }}>
+      <Tab.Screen
+        name={'To-Do'}
+        component={ToDo}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name={'Done'}
+        component={Done}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
+const RootStack = createNativeStackNavigator();
+
+function App() {
   return (
     <Provider store={Store}>
       <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Login"
+        <RootStack.Navigator
+          initialRouteName="Splash"
           screenOptions={{
             headerTitleAlign: 'center',
             headerStyle: {
@@ -37,20 +73,19 @@ const App = () => {
               fontWeight: 'bold',
             },
           }}>
-          <Stack.Screen
-            name="Login"
-            component={Login}
+          <RootStack.Screen
+            name="Splash"
+            component={Splash}
             options={{
               headerShown: false,
             }}
           />
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Map" component={Map} />
-          <Stack.Screen name="Camera" component={Camera} />
-        </Stack.Navigator>
+          <RootStack.Screen name="My Tasks" component={HomeTabs} />
+          <RootStack.Screen name="Task" component={Task} />
+        </RootStack.Navigator>
       </NavigationContainer>
     </Provider>
   );
-};
+}
 
 export default App;

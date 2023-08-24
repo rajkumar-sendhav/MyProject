@@ -2,12 +2,20 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/AbrilFatface-Regular.ttf",
+      "sha1": "545553bf8733c6edc2846ba1b420f19e4a6ff2de"
+    },
+    {
       "path": "src/assets/fonts/DancingScript-Regular.ttf",
       "sha1": "b52e869bd47b6e98fd907ae00b1828916451b3b0"
     },
     {
       "path": "src/assets/fonts/Pacifico-Regular.ttf",
       "sha1": "baca1fca7fe74b61cb33aa0da48ec1a3a77bcf49"
+    },
+    {
+      "path": "src/assets/fonts/PermanentMarker-Regular.ttf",
+      "sha1": "bc40bfbc7eb7715af82b136429848a3c7a83a2b3"
     },
     {
       "path": "src/assets/fonts/Rajdhani-Regular.ttf",
